@@ -1,5 +1,5 @@
 const express = require("express");
-const app = express();
+
 
 
 const {
@@ -10,6 +10,7 @@ const {
     createTour,
 } = require("./tourHandlers");
 
+const app = express();
 app.use(express.json());
 
 app.get("/tours", getAllTours);
