@@ -7,6 +7,7 @@ const getAllTours = (req, res) => {
 
 const createTour = (req, res) => {
     const { name, info, image, price, location } = req.body;
+    
     const tour = Tour.addOne(
         name,
         info,
