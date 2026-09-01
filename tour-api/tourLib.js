@@ -25,27 +25,37 @@ function getAllTours() {
     return tourArray;
 }
 
-if (require.main === module) {
-    if (require.main === module) {
-        addOne(
-            "Paris in 7 Days",
-            "Explore Paris.",
-            "https://example.com/paris.jpg",
-            "1,995",
-            "Paris, France"
-        );
+// if (require.main === module) {
+//     const result = addOne(
+//         "Paris in 7 Days",
+//         "Explore Paris.",
+//         "https://example.com/paris.jpg",
+//         "1,995",
+//         "Paris, France"
+//     );
 
-        addOne(
-            "Helsinki Weekend",
-            "Discover Helsinki.",
-            "https://example.com/helsinki.jpg",
-            "795",
-            "Helsinki, Finland"
-        );
+//     console.log(result);
+    
+// };
 
-        console.log(getAllTours());
-    }
-};
+addOne(
+        "Paris in 7 Days",
+        "Explore Paris.",
+        "https://example.com/paris.jpg",
+        "1,995",
+        "Paris, France"
+    );
+
+addOne(
+    "Helsinki Weekend",
+    "Discover Helsinki.",
+    "https://example.com/helsinki.jpg",
+    "795",
+    "Helsinki, Finland"
+);
+
+console.log(getAllTours());
+
 
 module.exports = {
     addOne,
