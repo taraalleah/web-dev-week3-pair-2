@@ -25,6 +25,10 @@ function getAllTours() {
     return tourArray;
 }
 
+const getTourById = (id) => {
+    return tourArray.find((tour) => tour.id === parseInt(id)) || null;
+};
+
 // if (require.main === module) {
 //     const result = addOne(
 //         "Paris in 7 Days",
@@ -59,5 +63,6 @@ console.log(getAllTours());
 
 module.exports = {
     addOne,
-    getAllTours
+    getAllTours,
+    getTourById
 };
