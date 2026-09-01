@@ -43,6 +43,17 @@ const updateTour = (id, data) => {
     return tour;
 };
 
+const deleteTour = (id) => {
+    const index = tourArray.findIndex((tour) => tour.id === Number(id));
+
+    if (index === -1) {
+        return false;
+    }
+
+    tourArray.splice(index, 1);
+    return true;
+};
+
 // if (require.main === module) {
 //     const result = addOne(
 //         "Paris in 7 Days",
