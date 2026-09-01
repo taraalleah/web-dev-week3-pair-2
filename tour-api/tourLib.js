@@ -29,29 +29,19 @@ function getTourById(id) {
     return tourArray.find((tour) => tour.id === parseInt(id)) || null;
 }
 
-function updateTour(id, updatedData) {
-    const tour = getTourById(id);
-    if (tour) {
-        if (updatedData.name) {
-            tour.name = updatedData.name;
-        }
-        if (updatedData.info) {
-            tour.info = updatedData.info;
-        }
-        if (updatedData.image) {
-            tour.image = updatedData.image;
-        }
-        if (updatedData.price) {
-            tour.price = updatedData.price;
-        }
-        if (updatedData.location) {
-            tour.location = updatedData.location;
-        }
-        return tour;
-    } else {
+const updateTour = (id, data) => {
+    const tour = tourArray.find(
+        (tour) => tour.id === Number(id)
+    );
+
+    if (!tour) {
         return null;
     }
-}
+
+    Object.assign(tour, data);
+    
+    return tour;
+};
 
 // if (require.main === module) {
 //     const result = addOne(

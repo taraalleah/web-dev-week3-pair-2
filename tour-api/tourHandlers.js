@@ -28,16 +28,16 @@ const getTourById = (req, res) => {
 };
 
 const updateTour = (req, res) => {
-    const tourId = req.params.tourId;
-    const updatedTour = Tour.update(
-        TourId,
-        req.body    
-    );
-    if (updatedTour) {
-        res.status(204).send();
-    } else {
-        res.status(404).json({ message: "Tour not found" });
+    const tour = Tour.updateTour(
+        req.params.id, //its this! it was named tourid instead of just id in the tourHandlers.js file, so it was not matching the parameter name in the route
+        req.body
+    );  
+
+    if (!tour) {
+        return res.status(404).json({ message: "Tour not found" });
     }
+
+    res.json(tour);
 };
 
 const deleteTour = (req, res) => {
