@@ -29,7 +29,7 @@ const getTourById = (req, res) => {
 
 const updateTour = (req, res) => {
     const tour = Tour.updateTour(
-        req.params.id, //its this! it was named tourid instead of just id in the tourHandlers.js file, so it was not matching the parameter name in the route
+        req.params.id, 
         req.body
     );  
 
