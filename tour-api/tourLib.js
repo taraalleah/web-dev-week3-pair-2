@@ -90,5 +90,6 @@ module.exports = {
     addOne,
     getAllTours,
     getTourById,
-    updateTour
+    updateTour,
+    deleteTour
 };
