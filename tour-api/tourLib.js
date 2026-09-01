@@ -25,9 +25,33 @@ function getAllTours() {
     return tourArray;
 }
 
-const getTourById = (id) => {
+function getTourById(id) {
     return tourArray.find((tour) => tour.id === parseInt(id)) || null;
-};
+}
+
+function updateTour(id, updatedData) {
+    const tour = getTourById(id);
+    if (tour) {
+        if (updatedData.name) {
+            tour.name = updatedData.name;
+        }
+        if (updatedData.info) {
+            tour.info = updatedData.info;
+        }
+        if (updatedData.image) {
+            tour.image = updatedData.image;
+        }
+        if (updatedData.price) {
+            tour.price = updatedData.price;
+        }
+        if (updatedData.location) {
+            tour.location = updatedData.location;
+        }
+        return tour;
+    } else {
+        return null;
+    }
+}
 
 // if (require.main === module) {
 //     const result = addOne(
@@ -64,5 +88,6 @@ console.log(getAllTours());
 module.exports = {
     addOne,
     getAllTours,
-    getTourById
+    getTourById,
+    updateTour
 };
